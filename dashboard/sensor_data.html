@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dữ liệu cảm biến</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+
+            <div class="logo">Dữ liệu cảm biến</div>
+
+            <div class="menu">
+                <a class="menu-button" href="index.html">Trang chủ</a>
+                <a class="menu-button" href="sensor_data.html">Dữ liệu</a>
+                <a class="menu-button" href="device_status.html">Thiết bị</a>
+                <a class="menu-button" href="wind_speed.html">Tốc độ gió</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+
+            <h2 class="section-title">Bảng dữ liệu cảm biến</h2>
+
+            <div class="search-section">
+
+                <label for="search-value">Nhập giá trị tìm kiếm:</label>
+                <input type="text" id="search-value" />
+
+                <label for="search-criteria">Tìm kiếm theo:</label>
+
+                <select id="search-criteria">
+                    <option value="time">Thời gian</option>
+                    <option value="temperature">Nhiệt độ</option>
+                    <option value="humidity">Độ ẩm</option>
+                    <option value="light">Cường độ sáng</option>
+                    <option value="wind_speed">Tốc độ gió</option>
+                </select>
+
+                <button onclick="searchByCriteria()">Tìm kiếm</button>
+                <button onclick="stopSearch()">Dừng tìm kiếm</button>
+            </div>
+
+            <table class="sensor-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Nhiệt độ (°C)</th>
+                        <th>Độ ẩm (%)</th>
+                        <th>Cường độ sáng (Lux)</th>
+                        <th>Tốc độ gió (m/s)</th>
+                    </tr>
+                </thead>
+
+                <tbody id="sensorDataTable">
+  
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button id="prevPage" onclick="changePage(-1)">Trước</button>
+                <span id="pageInfo">Trang 1/10</span>
+                <button id="nextPage" onclick="changePage(1)">Tiếp</button>
+            </div>
+        </div>
+    </div>
+    <script src="sensor_script.js"></script>
+</body>
+</html>

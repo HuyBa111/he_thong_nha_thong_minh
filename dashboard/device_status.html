@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử trạng thái LED</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Lịch sử thiết bị</div>
+            <div class="menu">
+                <a class="menu-button" href="index.html">Trang chủ</a>
+                <a class="menu-button" href="sensor_data.html">Dữ liệu</a>
+                <a class="menu-button" href="device_status.html">Thiết bị</a>
+                <a class="menu-button" href="wind_speed.html">Tốc độ gió</a>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <h2 class="section-title">Bảng lịch sử trạng thái</h2>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <label for="search-value">Nhập giá trị tìm kiếm:</label>
+                <input type="text" id="search-value" />
+
+                <label for="search-criteria">Tìm kiếm theo:</label>
+                <select id="search-criteria">
+                    <option value="time">Thời gian</option>
+                    <option value="status">Trạng thái</option>
+                    <option value="device">Thiết bị</option>
+                </select>
+
+                <button onclick="searchByCriteria()">Tìm kiếm</button>
+                <button onclick="resetSearch()">Hiển thị tất cả</button>
+            </div>
+
+            <!-- LED History Table -->
+            <table class="led-history-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Thời gian</th>
+                        <th>Thiết bị</th>
+                        <th>Trạng thái LED</th>
+                    </tr>
+                </thead>                
+                <tbody id="ledHistoryTable">
+                    <!-- Data rows will be dynamically added here -->
+                </tbody>
+            </table>
+
+            <!-- Pagination Section -->
+            <div class="pagination">
+                <button id="prevPage" onclick="changePage(-1)">Trước</button>
+                <span id="pageInfo">Trang 1/10</span>
+                <button id="nextPage" onclick="changePage(1)">Tiếp</button>
+            </div>
+        </div>
+    </div>
+    <script src="device_script.js"></script>
+</body>
+</html>

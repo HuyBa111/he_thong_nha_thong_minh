@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tốc độ gió</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="logo">Dữ liệu cảm biến</div>
+            <div class="menu">
+                <a class="menu-button" href="index.html">Trang chủ</a>
+                <a class="menu-button" href="sensor_data.html">Dữ liệu</a>
+                <a class="menu-button" href="device_status.html">Thiết bị</a>
+                <a class="menu-button" href="wind_speed.html">Tốc độ gió</a>
+            </div>
+        </div>
+
+        <div class="value-container">
+            <span id="windSpeed">Tốc độ gió: 0 m/s</span>
+        </div>
+
+        <canvas id="windSpeedChart"></canvas>
+
+        <div class="led-container">
+            <span>Tình trạng LED:</span>
+            <div id="ledIndicator" class="led led-off"></div>
+        </div>
+    </div>
+
+    <script src="wind_speed_script.js"></script>
+</body>
+</html>

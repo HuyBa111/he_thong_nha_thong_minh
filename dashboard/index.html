@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Dashboard</div>
+            <div class="menu">
+                <a class="menu-button" href="index.html">Trang chủ</a>
+                <a class="menu-button" href="sensor_data.html">Dữ liệu</a>
+                <a class="menu-button" href="device_status.html">Thiết bị</a>
+                <a class="menu-button" href="wind_speed.html">Tốc độ gió</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section sensor-section">
+                <h2 class="section-title">Cảm biến</h2>
+                <div class="sensor">
+                    Nhiệt độ
+                    <div class="sensor-value" id="temperature">--</div>
+                </div>
+                <div class="sensor">
+                    Độ ẩm
+                    <div class="sensor-value" id="humidity">--</div>
+                </div>
+                <div class="sensor">
+                    Cường độ sáng
+                    <div class="sensor-value" id="light">--</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="chart-section">
+                    <h2 class="section-title">Dữ liệu cảm biến</h2>
+                    <div class="chart-container">
+                        <canvas id="sensorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section control-section">
+                <h2 class="section-title">Điều khiển thiết bị</h2>
+                <div class="control-card">
+                    <span>Điều hòa</span>
+                    <label class="switch">
+                        <input type="checkbox" id="light_control">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="control-card">
+                    <span>Quạt</span>
+                    <label class="switch">
+                        <input type="checkbox" id="fan">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="control-card">
+                    <span>Đèn</span>
+                    <label class="switch">
+                        <input type="checkbox" id="ac">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index_script.js"></script>
+</body>
+
+</html>
